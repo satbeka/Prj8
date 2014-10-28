@@ -9,7 +9,7 @@ import java.util.List;
 public class Train {
     private String Number="-000";
     public Train(String N){
-        if (N.isEmpty()) {throw new IllegalArgumentException("Number of Train isn't be empty!");};
+        if (N.isEmpty()) {throw new IllegalArgumentException("Number of Train is empty!");};
         this.Number=N;
 
     }
