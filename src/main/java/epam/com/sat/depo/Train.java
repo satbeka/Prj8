@@ -18,5 +18,12 @@ public class Train {
         vagonsList.add(vagon);
         return this;
     }
-
+   public class Lokomotiv{
+       public class Mark{
+           String Name;
+       }
+       public class Driver{
+           String Name;
+       }
+   }
 }
