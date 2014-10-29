@@ -3,7 +3,9 @@ package epam.com.sat.railway;
 import epam.com.sat.depo.*;
 //import epam.com.sat.depo.Train;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by 1 on 28.10.2014.
@@ -16,7 +18,7 @@ public class Runner {
     String sysDTString = sysDate.toString();}
     */
 
-    static public int launchTrain(){
+    static public void launchTrain(){
         DepoA Depo;
         Train T=Depo.createTrain("01As");
 
@@ -34,21 +36,26 @@ public class Runner {
         PassengerVagon P8=new PassengerVagon(12,8,7,95);
         OilVagon O1=new OilVagon(80,9,80,"AI95");
 
-        T.addVagon(P1).addVagon(P2).addVagon(P3).addVagon(P4).addVagon();
+        T.addVagon(P1).addVagon(P2).addVagon(P3).addVagon(P5).addVagon(P8).addVagon(P7).addVagon(O1);
 
         Date sysDate = new Date();
         String sysDTString = sysDate.toString();
 
-       if ()
         {System.out.println("Train create on="+sysDTString);}
-        return 1;
-       else
-        {System.out.println("Train don't create on "+sysDTString);}
-        return 0;
+        //return 1;
     }
 
-    static public int calcTotalPassenger(){
+    static public int calcTotalPassenger(Train T){
         int TotalPassenger=0;
+        List<Vagon> listTemp;//=new ArrayList<Vagon>();
+        listTemp=T.getList();
+
+        for (int i = 0; i < T.countVagon(); i++) {
+            List<Vagon> listTemp=new ArrayList<Vagon>();
+            listTemp=this.vagonsList;
+
+        }
+
         Date sysDate = new Date();
         String sysDTString = sysDate.toString();
 

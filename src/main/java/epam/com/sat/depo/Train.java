@@ -18,6 +18,20 @@ public class Train {
         vagonsList.add(vagon);
         return this;
     }
+    public int countVagon(){
+
+        int c=this.vagonsList.size();
+        System.out.println("listTemp.size()=" + c);
+        return c;
+    }
+    public ArrayList<Vagon> getList(){
+        int size=this.vagonsList.size();
+        ArrayList<Vagon> listVagonListNew=new ArrayList<Vagon>(size);
+
+        System.arraycopy(this.vagonsList,0,listVagonListNew,0,size);
+        return listVagonListNew;
+    }
+
    public class Lokomotiv{
        public String Mark;
        public String Driver;

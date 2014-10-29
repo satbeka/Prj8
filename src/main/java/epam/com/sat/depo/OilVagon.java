@@ -12,7 +12,7 @@ public class OilVagon extends Vagon{
     public OilVagon(int cargo,int idVagon,int tonn,String typeOil){
         super(cargo,idVagon);
         this.tonnOil=tonn;
-        if (typeOil>TypeOil.valueOf()) {throw new IllegalArgumentException("There isn't such type as="+typeOil);};
+        if ((TypeOil.valueOf(typeOil).ordinal() >=0 )) {};
         this.typeOil=typeOil;
     }
 }
