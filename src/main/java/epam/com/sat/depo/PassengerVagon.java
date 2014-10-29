@@ -6,10 +6,11 @@ package epam.com.sat.depo;
 public class PassengerVagon extends Vagon{
     int countPassenger=0;
     int levelComfort=100;
-    public PassengerVagon(int c,int id,int cP,int lC){
-        super(c,id);
-        this.countPassenger=cP;
-        this.levelComfort=lC;
+    public PassengerVagon(int cargo,int idVagon,int countPassenger,int levelComfort){
+        super(cargo,idVagon);
+        this.countPassenger=countPassenger;
+        if (levelComfort>100) {throw new IllegalArgumentException("Level of Comfort is > 100% !");};
+        this.levelComfort=levelComfort;
     }
 
     public int getCountPassenger() {

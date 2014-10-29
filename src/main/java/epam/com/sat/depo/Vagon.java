@@ -6,8 +6,8 @@ package epam.com.sat.depo;
 public class Vagon{
     int cargo=-1;
     int idVagon=-1;
-    public Vagon(int c,int id){
-        this.cargo=c;
-        this.idVagon=id;
+    public Vagon(int cargo,int idVagon){
+        this.cargo=cargo;
+        this.idVagon=idVagon;
     }
 }

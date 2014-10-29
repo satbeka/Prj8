@@ -19,11 +19,13 @@ public class Train {
         return this;
     }
    public class Lokomotiv{
-       public class Mark{
-           String Name;
-       }
-       public class Driver{
-           String Name;
-       }
+       public String Mark;
+       public String Driver;
    }
+    public void addLokomotiv(String M,String D){
+        Lokomotiv L=new Lokomotiv();
+        L.Mark=M;
+        L.Driver=D;
+        System.out.println("Lokomotiv add ");
+    }
 }

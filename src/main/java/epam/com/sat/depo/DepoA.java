@@ -3,7 +3,7 @@ package epam.com.sat.depo;
 /**
  * @author sat
  */
-public abstract class DepoA {
+public class DepoA {
     public enum Name{
         ASTANA, KARAGANDA, ALMATY, YRALSK;
     }

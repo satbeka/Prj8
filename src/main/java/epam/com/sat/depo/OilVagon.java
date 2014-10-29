@@ -9,9 +9,10 @@ public class OilVagon extends Vagon{
     public enum TypeOil{
         GAZOLINE,AI92,AI96,TOSOL;
     }
-    public OilVagon(int c,int id,int tonn,String type){
-        super(c,id);
+    public OilVagon(int cargo,int idVagon,int tonn,String typeOil){
+        super(cargo,idVagon);
         this.tonnOil=tonn;
-        this.typeOil=type;
+        if (typeOil>TypeOil.valueOf()) {throw new IllegalArgumentException("There isn't such type as="+typeOil);};
+        this.typeOil=typeOil;
     }
 }
