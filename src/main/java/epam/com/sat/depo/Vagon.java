@@ -13,5 +13,7 @@ public class Vagon{
     public int getCountCargo() {
         return this.cargo;
     }
-
+    public int getIdVagon() {
+        return this.idVagon;
+    }
 }

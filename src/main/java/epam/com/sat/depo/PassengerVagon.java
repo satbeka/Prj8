@@ -17,7 +17,10 @@ public class PassengerVagon extends Vagon {
         this.levelComfort=levelComfort;
     }
 
-
+    @Override
+    public String toString(){
+        return "Passenger Vagon id="+this.getIdVagon()+" count passengers="+this.getCountPassenger();
+    }
     public int getCountPassenger() {
         return this.countPassenger;
     }

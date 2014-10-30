@@ -21,8 +21,13 @@ public class Test {
         if ((Train1 != null)) {
             totalPassengerCargo=Train1.calcTotalPassengerCargo();
             totalPassenger=Train1.calcTotalPassenger();
+            Train1.sortByComfortLevel();
+
+
+            
 
         }
+
 
 
         System.gc();
