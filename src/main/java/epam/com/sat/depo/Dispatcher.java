@@ -31,7 +31,7 @@ public class Dispatcher {
         for (int k = countPassengerVagon; k <countPassengerVagon+countCargoVagon ; k++) {
             TransportVagon Tv=new TransportVagon(k,"GAZ");
             T.addVagon(Tv);
-            int y;
+
             System.out.println("TransportVagon add id="+Tv.getIdVagon());
         }
 
