@@ -9,6 +9,8 @@ import epam.com.sat.railway.Runner;
  */
 public class Test {
     public static void main(String[] args) {
+
+
          int totalPassengerCargo;int totalPassenger;
         DepoA.Name depo = DepoA.Name.KARAGANDA;
         //int totalVagons=15;
@@ -22,6 +24,8 @@ public class Test {
 
         }
 
+
+        System.gc();
 
     }
 }

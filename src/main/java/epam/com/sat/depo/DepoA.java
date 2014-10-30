@@ -8,8 +8,7 @@ public class DepoA {
         ASTANA, KARAGANDA, ALMATY, YRALSK;
     }
     public Train createTrain(String Nm){
-        Train T=new Train(Nm);
-        return T;
+        return new Train(Nm);
     }
 }
 
