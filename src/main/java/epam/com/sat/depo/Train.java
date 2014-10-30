@@ -31,8 +31,16 @@ public class Train {
 
     public ArrayList<Vagon> sortByComfortLevel(){
 
-        
+        //----
+        Collections.sort(list, new Comparator()
+        {public int compare(Object o1, Object o2)
+            {int a = ((Integer) o1).intValue();
+             int b = ((Integer) o2).intValue();
+             return a < b ? 1 : a == b ? 0 : -1;
+             }
+             });
 
+        //---
 
         int size=this.vagonsList.size();
         ArrayList<Vagon> listVagonListNew=new ArrayList<Vagon>(size);
