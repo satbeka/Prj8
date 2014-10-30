@@ -4,8 +4,8 @@ package epam.com.sat.depo;
  * Created by 1 on 28.10.2014.
  */
 public class PassengerVagon extends Vagon{
-    int countPassenger=0;
-    int levelComfort=100;
+    private int countPassenger=0;
+    private int levelComfort=100;
     public PassengerVagon(int cargo,int idVagon,int countPassenger,int levelComfort){
         super(cargo,idVagon);
         this.countPassenger=countPassenger;
@@ -14,11 +14,11 @@ public class PassengerVagon extends Vagon{
     }
 
     public int getCountPassenger() {
-        return countPassenger;
+        return this.countPassenger;
     }
 
     public int getLevelComfort() {
-        return levelComfort;
+        return this.levelComfort;
     }
 }
 

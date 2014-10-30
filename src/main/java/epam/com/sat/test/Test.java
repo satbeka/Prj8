@@ -1,6 +1,7 @@
 package epam.com.sat.test;
 
 import epam.com.sat.depo.DepoA;
+import epam.com.sat.depo.Train;
 import epam.com.sat.railway.Runner;
 
 /**
@@ -8,18 +9,18 @@ import epam.com.sat.railway.Runner;
  */
 public class Test {
     public static void main(String[] args) {
-        int c; int totalCargo;int totalPassenger;
+         int totalPassengerCargo;int totalPassenger;
         DepoA.Name depo = DepoA.Name.KARAGANDA;
-        int totalVagons=15;
+        //int totalVagons=15;
 
 
-        c=Runner.createTrain(depo,totalVagons);
-        for (int i = 0; i < totalVagons; i++) {
-            ///fill vagons parametrs
+        Train Train1=Runner.launchTrain(depo);
+        System.out.println(Train1.toString());
+        if ((Train1 != null)) {
+            totalPassengerCargo=Train1.calcTotalPassengerCargo();
+            totalPassenger=Train1.calcTotalPassenger();
+
         }
-
-        totalCargo=Runner.calcTotalCargo();
-        totalPassenger=Runner.calcTotalPassenger();
 
 
     }
