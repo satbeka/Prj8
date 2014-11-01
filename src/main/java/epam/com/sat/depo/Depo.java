@@ -5,7 +5,7 @@ package epam.com.sat.depo;
  */
 public class Depo {
     private String Name;
-    
+
     public Depo(String inName){
         this.Name=inName;
     }

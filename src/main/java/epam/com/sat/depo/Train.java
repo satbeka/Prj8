@@ -1,4 +1,7 @@
 package epam.com.sat.depo;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.*;
 
 /**
@@ -6,8 +9,10 @@ import java.util.*;
  */
 public class Train {
     private String number;
+    private static Logger log = LoggerFactory.getLogger(Dispatcher.class);
     public Train(String N){
-        if (N.isEmpty()) {throw new IllegalArgumentException("Number of Train is empty!");};
+        if (N.isEmpty()) { log.error("Number of Train is empty!");
+            throw new IllegalArgumentException();};
         this.number=N;
     }
     private List<Vagon> vagonsList = new ArrayList<Vagon>();
@@ -67,6 +72,7 @@ public class Train {
         Lokomotiv L=new Lokomotiv();
         L.Mark=M;
         L.Driver=D;
-        System.out.println("Lokomotiv add ");
+        //System.out.println
+        log.debug("Lokomotiv add ");
     }
 }

@@ -5,6 +5,8 @@ import epam.com.sat.depo.Depo;
 import epam.com.sat.depo.Dispatcher;
 import epam.com.sat.depo.Train;
 import epam.com.sat.railway.Builder;
+import org.slf4j.*;
+//import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
@@ -15,20 +17,29 @@ public class Test {
 
     public static void main(String[] args) {
 
+        Logger log = LoggerFactory.getLogger(Test.class);
+
+
+        log.info("Begin");
+        log.debug("Begin");
         int totalPassengerCargo;int totalPassenger;
         Dispatcher Dispatcher1 = new Dispatcher();
         Dispatcher1.setName("Sat");
         Train Train1= Dispatcher1.launchTrain("KARAGANDA","015-Astana",21,2);
-        System.out.println(Train1.toString());
+        //System.out.println(Train1.toString());
+        log.info(Train1.toString());
         if ((Train1 != null)) {
             totalPassengerCargo=Dispatcher1.calcTotalPassengerCargo(Train1);
             totalPassenger=Dispatcher1.calcTotalPassenger(Train1);
             Dispatcher1.sortByComfortLevel(Train1);
             List<Integer> arrFindVagons;
             arrFindVagons=Dispatcher1.searchVagons(2,8,Train1);
-            System.out.println("Find vagons in range between 2 and 8:");
+            //System.out.println
+            // ("Find vagons in range between 2 and 8:");
+            log.info("Find vagons in range between 2 and 8:");
             for (Integer Id : arrFindVagons) {
-                System.out.println("Vagon id=" + Id);
+                //System.out.println("Vagon id=" + Id);
+                log.info("Vagon id=" + Id);
                 }
 
             }

@@ -1,12 +1,15 @@
 package epam.com.sat.depo;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import javax.annotation.processing.SupportedOptions;
 import javax.swing.plaf.synth.SynthOptionPaneUI;
 import java.util.*;
 
 public class Dispatcher {
     private String Name;
-
+    private static Logger log = LoggerFactory.getLogger(Dispatcher.class);
     public String getName() {
         return Name;
     }
@@ -23,16 +26,22 @@ public class Dispatcher {
         for (int i = 0; i <countPassengerVagon ; i++) {
             PassengerVagon P=new PassengerVagon(i);
             T.addVagon(P);
-            System.out.println("PassengerVagon add id="+P.getIdVagon()+" count of passengers="+P.getCountPassenger()
+            //System.out.println
+            log.debug(
+             ("PassengerVagon add id="+P.getIdVagon()+" count of passengers="+P.getCountPassenger()
                     +" count of cargo="+P.getCountCargo()
-                    +" comfort="+P.getLevelComfort());
+                    +" comfort="+P.getLevelComfort())
+            );
         }
 
         for (int k = countPassengerVagon; k <countPassengerVagon+countCargoVagon ; k++) {
             TransportVagon Tv=new TransportVagon(k,"GAZ");
             T.addVagon(Tv);
 
-            System.out.println("TransportVagon add id="+Tv.getIdVagon());
+            log.debug
+            //System.out.println
+                    ("TransportVagon add id="+Tv.getIdVagon()
+                    );
         }
 
         /*
@@ -55,7 +64,9 @@ public class Dispatcher {
         Date sysDate = new Date();
         String sysDTString = sysDate.toString();
 
-        {System.out.println("Train create on="+sysDTString);}
+        //System.out.println
+        log.info ("Train create on="+sysDTString);
+        //log.error("TTTTTTTTTTTTT");
         return T;
     }
     public int calcTotalPassenger(Train T){
@@ -71,7 +82,8 @@ public class Dispatcher {
                 TotalPassenger+=VgP.getCountPassenger();
             };
         }
-        {System.out.println("TotalPassenger ="+TotalPassenger);}
+        //System.out.println
+        log.info("TotalPassenger ="+TotalPassenger);
         return TotalPassenger;
     }
     public int calcTotalPassengerCargo(Train T){
@@ -85,7 +97,8 @@ public class Dispatcher {
                 TotalPassengerCargo+=Vg.getCountCargo();
             };
         }
-        {System.out.println("TotalPassengerCargo ="+TotalPassengerCargo);}
+        //System.out.println
+         log.info("TotalPassengerCargo ="+TotalPassengerCargo);
         return TotalPassengerCargo;
     }
     public int calcTotalCargo(Train T){
@@ -97,7 +110,8 @@ public class Dispatcher {
             Vg=listTemp.get(i);
             TotalCargo+=Vg.getCountCargo();
         }
-        {System.out.println("TotalCargo ="+TotalCargo);}
+        //System.out.println
+         log.info("TotalCargo ="+TotalCargo);
         return TotalCargo;
     }
 
@@ -118,8 +132,10 @@ public class Dispatcher {
                 ;
                 String a = ((PassengerVagon) o1).getLevelComfort();
                 String b = ((PassengerVagon) o2).getLevelComfort();
-                //System.out.println("a="+a+" "+PassengerVagon.getIdComfort(a));
-                //System.out.println("b="+b+" "+PassengerVagon.getIdComfort(b));
+                //System.out.println
+                log.debug ("a="+a+" "+PassengerVagon.getIdComfort(a));
+                //System.out.println
+                log.debug ("b="+b+" "+PassengerVagon.getIdComfort(b));
 
                 //PassengerVagon.getIdComfort(a);
                 //PassengerVagon.getIdComfort(b);
@@ -129,10 +145,12 @@ public class Dispatcher {
         });
 
         //---
-        System.out.println(" Sort by comfort level is:");
+        //System.out.println
+                log.info(" Sort by comfort level is:");
         for (Vagon V :listVagonSort) {
             if ((V instanceof PassengerVagon)) {
-                System.out.println("PassengerVagon id=" + V.getIdVagon() + " comfort level= "
+                //System.out.println
+                        log.info("PassengerVagon id=" + V.getIdVagon() + " comfort level= "
                         + ((PassengerVagon) V).getLevelComfort());
             }
 
@@ -159,7 +177,7 @@ public class Dispatcher {
 
 
         }
-        if (arrVagons.size()==0) {System.out.println("Find 0 vagons ");};
+        if (arrVagons.size()==0) {log.info("Find 0 vagons ");};
         return arrVagons;
     }
 
