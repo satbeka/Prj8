@@ -12,7 +12,8 @@ public class PassengerVagon extends Vagon {
     private int countPassenger;
     private String levelComfort;
     private enum Comfort{
-        HARDCARD,PLATCCARD,CUPECARD;
+        COMMON_PLACE,PLATSKARD,
+        COMPARTMENT;
     }
     public PassengerVagon(int idVagon){
 
@@ -38,9 +39,9 @@ public class PassengerVagon extends Vagon {
     }
 
     public static  int getIdComfort(String l){
-        if (l=="HARDCARD") {return Comfort.HARDCARD.ordinal();};
-        if (l=="PLATCCARD") {return Comfort.PLATCCARD.ordinal();};
-        if (l=="CUPECARD") {return Comfort.CUPECARD.ordinal();};
+        if (l=="COMMON_PLACE") {return Comfort.COMMON_PLACE.ordinal();};
+        if (l=="PLATSKARD") {return Comfort.PLATSKARD.ordinal();};
+        if (l=="COMPARTMENT") {return Comfort.COMPARTMENT.ordinal();};
         return -1;
 
     }

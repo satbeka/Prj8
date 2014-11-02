@@ -23,11 +23,11 @@ public class Builder {
         return r.nextInt(30);
     };
     public String randomLevelComfort(int idVagon){
-        if (idVagon%2==0){return "HARDCARD";};
-        if (idVagon%3==0){return "PLATCCARD";};
-        if (idVagon%5==0){return "CUPECARD";};
+        if (idVagon%2==0){return "COMMON_PLACE";};
+        if (idVagon%3==0){return "PLATSKARD";};
+        if (idVagon%5==0){return "COMPARTMENT";};
 
-        return "HARDCARD";
+        return "COMMON_PLACE";
     };
 
 
