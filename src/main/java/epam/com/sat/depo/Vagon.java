@@ -1,6 +1,6 @@
 package epam.com.sat.depo;
 
-import epam.com.sat.railway.Builder;
+import epam.com.sat.builder.TrainBuilder;
 
 /**
  * Created by 1 on 28.10.2014.
@@ -9,7 +9,7 @@ public class Vagon{
     private int cargo;
     private int idVagon;
     public Vagon(int idVagon){
-        Builder B=new Builder();
+        TrainBuilder B=new TrainBuilder();
         this.cargo=B.randomCargo();
         this.idVagon=idVagon;
     }

@@ -4,7 +4,6 @@ import epam.com.sat.depo.Depo;
 //import epam.com.sat.depo.DepoA;
 import epam.com.sat.depo.Dispatcher;
 import epam.com.sat.depo.Train;
-import epam.com.sat.railway.Builder;
 import org.slf4j.*;
 //import org.slf4j.LoggerFactory;
 
@@ -23,17 +22,18 @@ public class Test {
         log.info("Begin");
         log.debug("Begin");
         int totalPassengerCargo;int totalPassenger;
-        Dispatcher Dispatcher1 = new Dispatcher();
-        Dispatcher1.setName("Sat");
-        Train Train1= Dispatcher1.launchTrain("KARAGANDA","015-Astana",21,2);
+        Depo depo=new Depo("KARAGANDA");
+        Dispatcher dispatcher = new Dispatcher();
+        dispatcher.setName("Sat");
+        Train train= dispatcher.launchTrain("015-Astana",21,2);
         //System.out.println(Train1.toString());
-        log.info(Train1.toString());
-        if ((Train1 != null)) {
-            totalPassengerCargo=Dispatcher1.calcTotalPassengerCargo(Train1);
-            totalPassenger=Dispatcher1.calcTotalPassenger(Train1);
-            Dispatcher1.sortByComfortLevel(Train1);
+        log.info(train.toString());
+        if ((train != null)) {
+            totalPassengerCargo=dispatcher.calcTotalPassengerCargo(train);
+            totalPassenger=dispatcher.calcTotalPassenger(train);
+            dispatcher.sortByComfortLevel(train);
             List<Integer> arrFindVagons;
-            arrFindVagons=Dispatcher1.searchVagons(2,8,Train1);
+            arrFindVagons=dispatcher.searchVagons(2,8,train);
             //System.out.println
             // ("Find vagons in range between 2 and 8:");
             log.info("Find vagons in range between 2 and 8:");

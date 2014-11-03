@@ -1,17 +1,14 @@
-package epam.com.sat.railway;
+package epam.com.sat.builder;
 
-import epam.com.sat.depo.*;
 //import epam.com.sat.depo.Train;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 import java.util.Random;
 
 /**
  * Created by 1 on 28.10.2014.
  */
-public class Builder {
+public class TrainBuilder {
+
 
     //int cargo,int idVagon,int countPassenger,int levelComfort
     public int randomCargo(){

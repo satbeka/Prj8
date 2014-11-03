@@ -1,9 +1,6 @@
 package epam.com.sat.depo;
 
-import com.sun.org.apache.xalan.internal.xsltc.compiler.util.CompareGenerator;
-import epam.com.sat.railway.Builder;
-
-import java.util.Comparator;
+import epam.com.sat.builder.TrainBuilder;
 
 /**
  * Created by 1 on 28.10.2014.
@@ -18,7 +15,7 @@ public class PassengerVagon extends Vagon {
     public PassengerVagon(int idVagon){
 
         super(idVagon);
-        Builder B=new Builder();
+        TrainBuilder B=new TrainBuilder();
         this.countPassenger= B.randomCountPassenger();//countPassenger;
         String levelComfort=B.randomLevelComfort(idVagon);
         //if (levelComfort>100) {throw new IllegalArgumentException("Level of Comfort is > 100% !");};

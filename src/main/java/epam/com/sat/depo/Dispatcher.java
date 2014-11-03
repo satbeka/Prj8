@@ -18,8 +18,8 @@ public class Dispatcher {
         Name = name;
     }
 
-    public Train launchTrain(String nameDepo,String numberTrain, int countPassengerVagon,int countCargoVagon){
-        Depo Depo=new Depo(nameDepo);
+    public Train launchTrain(String numberTrain, int countPassengerVagon,int countCargoVagon){
+
         Train T=new Train(numberTrain);
 
         T.addLokomotiv("TOYOTA","Sat");
