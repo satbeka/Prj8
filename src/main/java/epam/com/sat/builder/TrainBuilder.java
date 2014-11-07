@@ -2,6 +2,8 @@ package epam.com.sat.builder;
 
 //import epam.com.sat.depo.Train;
 
+import epam.com.sat.depo.Dictionary;
+
 import java.util.Random;
 
 /**
@@ -20,11 +22,11 @@ public class TrainBuilder {
         return r.nextInt(30);
     };
     public String randomLevelComfort(int idVagon){
-        if (idVagon%2==0){return "COMMON_PLACE";};
-        if (idVagon%3==0){return "PLATSKARD";};
-        if (idVagon%5==0){return "COMPARTMENT";};
+        if (idVagon%2==0){return Dictionary.Comfort.COMMON_PLACE.toString();};
+        if (idVagon%3==0){return Dictionary.Comfort.PLATSKARD.toString();};
+        if (idVagon%5==0){return Dictionary.Comfort.COMPARTMENT.toString();};
 
-        return "COMMON_PLACE";
+        return Dictionary.Comfort.COMMON_PLACE.toString();
     };
 
 
