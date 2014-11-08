@@ -10,12 +10,14 @@ import java.util.*;
 public class Train {
     private String number;
     private static Logger log = LoggerFactory.getLogger(Dispatcher.class);
+    private List<Vagon> vagonsList = new ArrayList<Vagon>();
+
     public Train(String N){
         if (N.isEmpty()) { log.error("Number of Train is empty!");
             throw new IllegalArgumentException();};
         this.number=N;
     }
-    private List<Vagon> vagonsList = new ArrayList<Vagon>();
+
     public Train addVagon(Vagon vagon){
         vagonsList.add(vagon);
         return this;
@@ -30,6 +32,10 @@ public class Train {
         //System.out.println("listTemp.size()=" + c);
         return c;
     }
+
+    /*
+    Create new ArrayList
+    */
     public ArrayList<Vagon> getList(){
         int size=this.vagonsList.size();
         ArrayList<Vagon> listVagonListNew=new ArrayList<Vagon>(size);
