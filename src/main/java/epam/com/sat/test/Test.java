@@ -7,7 +7,11 @@ import epam.com.sat.depo.Train;
 import org.slf4j.*;
 //import org.slf4j.LoggerFactory;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.List;
+import java.util.Scanner;
 
 /**
  * Created by 1 on 28.10.2014.
@@ -24,7 +28,21 @@ public class Test {
         int totalPassengerCargo;int totalPassenger;
         Depo depo=new Depo("KARAGANDA");
         Dispatcher dispatcher = new Dispatcher();
-        dispatcher.setName("Sat");
+        InputStreamReader is = new InputStreamReader(System.in);
+        BufferedReader bis = new BufferedReader(is);
+        String name = null;
+        //Scanner con = new Read(System.in);
+        System.out.println("Input Your Name and press <Enter>:");
+
+
+        try {
+            name=bis.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        //dispatcher.setName("Sat");
+        dispatcher.setName(name);
         Train train= dispatcher.launchTrain("015-Astana",21,2);
         //System.out.println(Train1.toString());
         log.info(train.toString());
