@@ -9,11 +9,11 @@ import java.util.*;
  */
 public class Train {
     private String number;
-    private static Logger log = LoggerFactory.getLogger(Dispatcher.class);
+    private static Logger trainLog = LoggerFactory.getLogger("trainLog");
     private List<Vagon> vagonsList = new ArrayList<Vagon>();
 
     public Train(String N){
-        if (N.isEmpty()) { log.error("Number of Train is empty!");
+        if (N.isEmpty()) { trainLog.error("Number of Train is empty!");
             throw new IllegalArgumentException();};
         this.number=N;
     }
@@ -77,6 +77,7 @@ public class Train {
         listTemp=this.getList();
         if (0 == listTemp.size()) {return rez;};
         rez="Train Number="+this.number+" have " +listTemp.size()+" vagons";
+        trainLog.debug(rez);
         return rez;
     }
 
@@ -89,6 +90,6 @@ public class Train {
         L.Mark=M;
         L.Driver=D;
         //System.out.println
-        log.debug("Lokomotiv add ");
+        trainLog.debug("Lokomotiv add ");
     }
 }
