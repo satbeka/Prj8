@@ -19,4 +19,12 @@ public class Vagon{
     public int getIdVagon() {
         return this.idVagon;
     }
+
+    @Override
+    public String toString() {
+        return "Vagon{" +
+                "cargo=" + cargo +
+                ", idVagon=" + idVagon +
+                '}';
+    }
 }

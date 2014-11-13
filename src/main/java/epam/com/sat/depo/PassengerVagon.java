@@ -26,6 +26,26 @@ public class PassengerVagon extends Vagon {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof PassengerVagon)) return false;
+
+        PassengerVagon that = (PassengerVagon) o;
+
+        if (countPassenger != that.countPassenger) return false;
+        if (!levelComfort.equals(that.levelComfort)) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = countPassenger;
+        result = 31 * result + levelComfort.hashCode();
+        return result;
+    }
+
+    @Override
     public String toString(){
         return "Passenger Vagon id="+this.getIdVagon()+" count passengers="+this.getCountPassenger();
     }

@@ -37,6 +37,9 @@ public class Test {
 
         try {
             name=bis.readLine();
+            is.close();
+            bis.close();
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -45,7 +48,7 @@ public class Test {
         dispatcher.setName(name);
         Train train= dispatcher.launchTrain("015-Astana",21,2);
         //System.out.println(Train1.toString());
-        log.info(train.toString());
+        log.info(train.toInfo());
         if ((train != null)) {
             totalPassengerCargo=dispatcher.calcTotalPassengerCargo(train);
             totalPassenger=dispatcher.calcTotalPassenger(train);

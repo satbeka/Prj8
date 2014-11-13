@@ -6,11 +6,19 @@ package epam.com.sat.depo;
 public class TransportVagon extends Vagon{
     //int tonnOil=0;
     String typeCargo;
-    /*
-    public enum TypeCargo{
-        LIQYID,SOLID,GAZ;
+
+    @Override
+    public String toString() {
+        return "TransportVagon{" +
+                "typeCargo='" + typeCargo + '\'' +
+                '}';
     }
-    */
+
+    /*
+        public enum TypeCargo{
+            LIQYID,SOLID,GAZ;
+        }
+        */
     public TransportVagon(int idVagon,String typeCargo){
         super(idVagon);
         //this.typeCargo=typeCargo;

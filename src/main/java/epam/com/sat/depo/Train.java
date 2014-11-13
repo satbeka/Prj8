@@ -67,9 +67,19 @@ public class Train {
         List<Vagon> listTemp;
         listTemp=this.getList();
         if (0 == listTemp.size()) {return rez;};
+        rez="Train="+this.number+"vagons= " +listTemp.size();
+        return rez;
+    }
+
+    public String toInfo(){
+        String rez= "Train isn't exist ";
+        List<Vagon> listTemp;
+        listTemp=this.getList();
+        if (0 == listTemp.size()) {return rez;};
         rez="Train Number="+this.number+" have " +listTemp.size()+" vagons";
         return rez;
     }
+
     public class Lokomotiv{
         public String Mark;
         public String Driver;
