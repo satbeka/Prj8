@@ -8,6 +8,23 @@ public class TransportVagon extends Vagon{
     String typeCargo;
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof TransportVagon)) return false;
+
+        TransportVagon that = (TransportVagon) o;
+
+        if (!typeCargo.equals(that.typeCargo)) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        return typeCargo.hashCode();
+    }
+
+    @Override
     public String toString() {
         return "TransportVagon{" +
                 "typeCargo='" + typeCargo + '\'' +
