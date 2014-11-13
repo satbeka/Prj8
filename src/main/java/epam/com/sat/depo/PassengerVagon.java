@@ -2,10 +2,12 @@ package epam.com.sat.depo;
 
 import epam.com.sat.builder.TrainBuilder;
 
+import java.util.Comparator;
+
 /**
  * Created by 1 on 28.10.2014.
  */
-public class PassengerVagon extends Vagon {
+public class PassengerVagon extends Vagon implements Comparable {
     private int countPassenger;
     private String levelComfort;
     /*
@@ -14,7 +16,7 @@ public class PassengerVagon extends Vagon {
         COMPARTMENT;
     }
     */
-    public PassengerVagon(int idVagon){
+    public PassengerVagon(int idVagon) {
 
         super(idVagon);
         TrainBuilder B=new TrainBuilder();
@@ -37,6 +39,7 @@ public class PassengerVagon extends Vagon {
 
         return true;
     }
+
 
     @Override
     public int hashCode() {
@@ -71,6 +74,14 @@ public class PassengerVagon extends Vagon {
         }
         ;
         return -1;
-    }}
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        return Integer.compare(PassengerVagon.getIdComfort(this.getLevelComfort()),PassengerVagon.getIdComfort(
+                ((PassengerVagon) o).getLevelComfort()));
+        //return 0;
+    }
+}
 
 

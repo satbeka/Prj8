@@ -18,7 +18,7 @@ import java.util.Scanner;
  */
 public class Test {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws RuntimeException, IOException {
 
         Logger log = LoggerFactory.getLogger(Test.class);
 
@@ -34,15 +34,20 @@ public class Test {
         //Scanner con = new Read(System.in);
         System.out.println("Input Your Name and press <Enter>:");
 
+        name=bis.readLine();
+        //is.close();
+        bis.close();
 
+/*
         try {
             name=bis.readLine();
-            is.close();
+            //is.close();
             bis.close();
 
         } catch (IOException e) {
             e.printStackTrace();
         }
+*/
 
         //dispatcher.setName("Sat");
         dispatcher.setName(name);

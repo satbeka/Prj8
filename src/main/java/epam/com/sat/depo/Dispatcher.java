@@ -136,11 +136,12 @@ public class Dispatcher {
                 log.debug ("a="+a+" "+PassengerVagon.getIdComfort(a));
                 //System.out.println
                 log.debug ("b="+b+" "+PassengerVagon.getIdComfort(b));
-
+                return ((PassengerVagon) o1).compareTo(o2);
                 //PassengerVagon.getIdComfort(a);
                 //PassengerVagon.getIdComfort(b);
 
-                return PassengerVagon.getIdComfort(a) > PassengerVagon.getIdComfort(b) ? 1 : a == b ? 0 : -1;
+                //return Integer.compare(PassengerVagon.getIdComfort(a),PassengerVagon.getIdComfort(b));
+                //PassengerVagon.getIdComfort(a) > PassengerVagon.getIdComfort(b) ? 1 : a == b ? 0 : -1;
             }
         });
 
